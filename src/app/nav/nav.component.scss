@@ -48,6 +48,7 @@
     user-select: none;
     transition: transform 0.4s ease-in-out;
     &.open {
+        background-color: $gray-900;
         i {
             background-color: $gray-100;
         }
@@ -63,7 +64,6 @@
     }
     &:hover.close {
         transform: rotate(180deg);
-        background: transparent;
     }
     &:hover i {
         background-color: $gray-100;
@@ -83,7 +83,7 @@
         border-radius: 50%;
         bottom: 20px;
         right: 20px;
-        background-color: $gray-900;
+        background-color: $dark;
         opacity: 1;
     }
 }
