@@ -1,3 +1,20 @@
-<p>
-  work works!
-</p>
+<div class="container">
+  <h1 class="h2 mt-5">{{work.title}}</h1>
+  <p class="lead">{{work.context}}</p>
+  <div class="img-cover mt-3">
+    <img class="img-fluid" src="../../assets/imgs/{{work.imageHD}}" alt="Card image cap">
+  </div>
+  <div class="work mt-3">
+    <hr>
+    <p>{{work.description}}</p>
+    <hr>
+    <div>
+      <ul>
+        <li *ngFor="let skill of work.skills">
+          {{skill.name}} - <a href="{{skill.doc}}" target="blank">docs</a>
+        </li>
+      </ul>
+    </div>
+    <a href="{{work.link}}" class="btn btn-sm btn-danger push-right" target="blank">voir le site</a>
+  </div>
+</div>

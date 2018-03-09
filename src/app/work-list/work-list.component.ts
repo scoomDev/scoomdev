@@ -12,7 +12,7 @@ export class WorkListComponent implements OnInit {
   workList;
 
   constructor() {
-    this.workList = works.reverse();
+    this.workList = works;
   }
 
   ngOnInit() {
