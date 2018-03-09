@@ -1,3 +1,26 @@
-<p>
-  work-list works!
-</p>
+<div class="container">
+  <h1 class="display-3 mt-5 mb-5 text-center text-uppercase">Portfolio</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aut autem voluptatibus molestias in, necessitatibus
+    cumque, excepturi nobis vero est beatae quis incidunt. Dolores cum quis deserunt, excepturi vero eum!</p>
+  <hr>
+  <main role="main" class="row">
+    <div id="cardDeck" class="card-deck">
+      <div class="card bg-white text-dark mb-3" routerLink="/work/{{work.id}}" name="card" *ngFor="let work of workList" style="min-width: 18rem;"
+        (mouseenter)="cardHoverAnimation($event)" (mouseleave)="cardOutAnimation($event)" attr.data-id="{{work.id}}" attr.data-img="{{work.image}}">
+        <div class="card-img-box">
+          <img class="card-img-top" src="../../assets/imgs/{{work.image}}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{work.title}}</h5>
+          <p class="card-text">{{work.description}}</p>
+          <a routerLink="/work/{{work.id}}">Voir le projet</a>
+        </div>
+        <div class="card-footer">
+          <span *ngFor="let skill of work.skills" class="badge badge-dark mr-1">
+            {{skill.name}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
