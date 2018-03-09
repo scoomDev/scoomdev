@@ -1,0 +1,27 @@
+<!-- Hamburger Button -->
+<div class="hamburger close" (click)="navToggle()">
+  <i></i>
+  <i></i>
+  <i></i>
+</div>
+
+<!-- Menu -->
+<nav [@toggleNav]="navState" class="nav">
+  <div class="nav-items">
+    <a routerLink="/home" routerLinkActive="active" (click)="navToggle()">
+      <div class="nav-item">
+        Accueil
+      </div>
+    </a>
+    <a routerLink="/workList" routerLinkActive="active" (click)="navToggle()">
+      <div class="nav-item">
+        Portfolio
+      </div>
+    </a>
+    <a routerLink="/contact" routerLinkActive="active" (click)="navToggle()">
+      <div class="nav-item">
+        Contact
+      </div>
+    </a>
+  </div>
+</nav>
