@@ -8,15 +8,13 @@ import { works } from '../../data/works';
   styleUrls: ['./work-list.component.scss']
 })
 export class WorkListComponent implements OnInit {
-
   workList;
 
   constructor() {
     this.workList = works;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   cardHoverAnimation(event) {
     const cardId = event.target.dataset['id'];
@@ -38,5 +36,4 @@ export class WorkListComponent implements OnInit {
       element.style.filter = 'blur(0)';
     }
   }
-
 }

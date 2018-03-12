@@ -1,11 +1,12 @@
 @import 'variables-custom';
 @import 'bootstrap-custom';
 
-html, body {
-    background-color: $dark;
-    color: $light;
+html,
+body {
+  background-color: $dark;
+  color: $light;
 }
 
 hr {
-    background-color: $light;
+  background-color: $light;
 }

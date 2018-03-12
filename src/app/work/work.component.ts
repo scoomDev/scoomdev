@@ -9,10 +9,9 @@ import { works } from '../../data/works';
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent implements OnInit {
-
   work;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     const workId = this.route.snapshot.paramMap.get('id');

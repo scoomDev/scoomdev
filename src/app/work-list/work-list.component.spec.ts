@@ -6,12 +6,13 @@ describe('WorkListComponent', () => {
   let component: WorkListComponent;
   let fixture: ComponentFixture<WorkListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ WorkListComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [WorkListComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WorkListComponent);

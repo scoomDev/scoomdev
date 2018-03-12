@@ -7,18 +7,23 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrls: ['./nav.component.scss'],
   animations: [
     trigger('toggleNav', [
-      state('open', style({
-        transform: 'translate3D(0, 0, 0)'
-      })),
-      state('close', style({
-        transform: 'translate3D(0, -100%, 0)'
-      })),
+      state(
+        'open',
+        style({
+          transform: 'translate3D(0, 0, 0)'
+        })
+      ),
+      state(
+        'close',
+        style({
+          transform: 'translate3D(0, -100%, 0)'
+        })
+      ),
       transition('open <=> close', animate('600ms cubic-bezier(0.19, 1, 0.22, 1)'))
     ])
   ]
 })
 export class NavComponent implements OnInit {
-
   open: boolean;
   navState: string;
 
@@ -27,8 +32,7 @@ export class NavComponent implements OnInit {
     this.navState = 'close';
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   navToggle() {
     this.open = !this.open;
@@ -42,5 +46,4 @@ export class NavComponent implements OnInit {
       document.querySelector('.hamburger').classList.add('close');
     }
   }
-
 }
