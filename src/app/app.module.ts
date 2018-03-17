@@ -10,6 +10,8 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { WorkService } from './services/work-service';
+
 const ROUTES: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -21,7 +23,7 @@ const ROUTES: Routes = [
 @NgModule({
   declarations: [AppComponent, WorkListComponent, WorkComponent, NavComponent, HomeComponent, ContactComponent],
   imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(ROUTES)],
-  providers: [],
+  providers: [WorkService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

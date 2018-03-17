@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
-import { works } from '../../data/works';
+import { Work } from '../interfaces/work';
+import { WorkService } from '../services/work-service';
 
 @Component({
   selector: 'app-work',
@@ -9,12 +11,14 @@ import { works } from '../../data/works';
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent implements OnInit {
-  work;
+  work: Work;
+  workList: Work[];
+  workSubscription: Subscription;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private workService: WorkService) {}
 
   ngOnInit() {
-    const workId = this.route.snapshot.paramMap.get('id');
-    this.work = works[workId];
+    const workId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+    this.work = this.workService.getWorkById(workId);
   }
 }

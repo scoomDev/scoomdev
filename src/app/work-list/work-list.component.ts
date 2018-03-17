@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
-import { works } from '../../data/works';
+import { Work } from '../interfaces/work';
+import { WorkService } from '../services/work-service';
 
 @Component({
   selector: 'app-work-list',
@@ -8,13 +10,19 @@ import { works } from '../../data/works';
   styleUrls: ['./work-list.component.scss']
 })
 export class WorkListComponent implements OnInit {
-  workList;
+  workList: Work[];
+  workSubscription: Subscription;
 
-  constructor() {
-    this.workList = works;
+  constructor(private workService: WorkService) {}
+
+  ngOnInit() {
+    this.workSubscription = this.workService.worksSubject.subscribe(
+      (works: Work[]) => {
+        this.workList = works;
+      }
+    );
+    this.workService.emitWorkSubject();
   }
-
-  ngOnInit() {}
 
   cardHoverAnimation(event) {
     const cardId = event.target.dataset['id'];
