@@ -3,6 +3,7 @@ export interface Work {
     title: string;
     subtitle: string;
     context: string;
+    info: string | null;
     description: string;
     link: string;
     skills: object[];
