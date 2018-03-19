@@ -10,6 +10,7 @@ import { WorkService } from '../services/work-service';
   styleUrls: ['./work-list.component.scss']
 })
 export class WorkListComponent implements OnInit {
+
   workList: Work[];
   workSubscription: Subscription;
 
@@ -19,6 +20,7 @@ export class WorkListComponent implements OnInit {
     this.workSubscription = this.workService.worksSubject.subscribe(
       (works: Work[]) => {
         this.workList = works;
+        this.workList.sort(this.compare);
       }
     );
     this.workService.emitWorkSubject();
@@ -42,6 +44,16 @@ export class WorkListComponent implements OnInit {
       const element = cards[i];
       element.style.opacity = '1';
       element.style.filter = 'blur(0)';
+    }
+  }
+
+  compare(a, b): number {
+    if (a.id > b.id) {
+      return -1;
+    } else if (a.id < b.id) {
+      return 1;
+    } else {
+      return 0;
     }
   }
 }

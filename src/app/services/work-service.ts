@@ -12,6 +12,7 @@ export class WorkService {
           subtitle: 'Un bon vieux sous-titre',
           context: 'Contexte du projet, concepte de base.',
           description: '<p>Premier projet de la formation OpenClassRooms<p><p>Blablablab blabla blavszf sdg<p>',
+          info: null,
           link: 'http://scoomarts.fr/altissia',
           skills: [
             { name: 'wordpress', doc: 'https://codex.wordpress.org/fr:Accueil' },
@@ -27,6 +28,7 @@ export class WorkService {
           subtitle: 'Un bon vieux sous-titre',
           context: 'Contexte du projet, concepte de base.',
           description: 'Troisième projet de la formation OpenClassRooms',
+          info: null,
           link: 'http://forteroche.scoomdev.eu/',
           skills: [
             { name: 'PHP', doc: 'http://php.net/manual/fr/intro-whatis.php' },
@@ -43,6 +45,7 @@ export class WorkService {
           subtitle: 'Un bon vieux sous-titre',
           context: 'Contexte du projet, concepte de base.',
           description: 'Quatrième projet de la formation OpenClassRooms',
+          info: null,
           link: 'http://projet-4.alwaysdata.net',
           skills: [
             { name: 'PHP', doc: 'http://php.net/manual/fr/intro-whatis.php' },
@@ -59,6 +62,7 @@ export class WorkService {
           subtitle: 'Un bon vieux sous-titre',
           context: 'Contexte du projet, concepte de base.',
           description: 'Cinquième projet de la formation OpenClassRooms',
+          info: null,
           link: 'https://teamp5.alwaysdata.net',
           skills: [
             { name: 'PHP', doc: 'http://php.net/manual/fr/intro-whatis.php' },
@@ -75,6 +79,7 @@ export class WorkService {
           subtitle: 'Un bon vieux sous-titre',
           context: 'Contexte du projet, concepte de base.',
           description: 'Sixième projet de la formation OpenClassRooms',
+          info: null,
           link: 'http://scoomdev.alwaysdata.net/login',
           skills: [
             { name: 'PHP', doc: 'http://php.net/manual/fr/intro-whatis.php' },
