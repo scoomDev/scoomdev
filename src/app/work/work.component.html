@@ -1,20 +1,28 @@
 <div class="container">
-  <h1 class="h2 mt-5">{{work.title}}</h1>
-  <p class="lead">{{work.context}}</p>
-  <div class="img-cover mt-3">
+  <h1 class="h2 mt-5 text-uppercase text-primary">{{work.title}}</h1>
+  <p class="lead">{{work.subtitle}}</p>
+  <div class="img-cover mt-4">
     <img class="img-fluid" src="../../assets/imgs/{{work.imageHD}}" alt="Card image cap">
   </div>
-  <div class="work mt-3">
+  <div class="work mt-4">
     <hr>
+    <p>{{work.context}}</p>
     <p>{{work.description}}</p>
+    <p class="text-muted">{{work.info}}</p>
     <hr>
-    <div>
-      <ul>
-        <li *ngFor="let skill of work.skills">
-          {{skill.name}} - <a href="{{skill.doc}}" target="blank">docs</a>
-        </li>
-      </ul>
+    <div class="card bg-secondary mt-4 mb-4">
+      <div class="card-body">
+        <h3>Techonologies</h3>
+        <ul>
+          <li *ngFor="let skill of work.skills">
+            {{skill.name}} - <a href="{{skill.doc}}" target="blank">documentations</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <a href="{{work.link}}" class="btn btn-sm btn-danger push-right" target="blank">voir le site</a>
+    <a href="{{work.link}}" class="btn btn-sm btn-danger" target="blank">voir le site</a>
+    <a routerLink="/workList" class="btn btn-sm btn-info push-right">retour</a>
   </div>
 </div>
+
+<app-footer class="text-center mt-5 d-block w-100"></app-footer>
