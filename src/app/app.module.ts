@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { WorkService } from './services/work-service';
+import { TruncatePipe } from './truncate.pipe';
+import { FooterComponent } from './footer/footer.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,7 +23,16 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, WorkListComponent, WorkComponent, NavComponent, HomeComponent, ContactComponent],
+  declarations: [
+    AppComponent,
+    WorkListComponent,
+    WorkComponent,
+    NavComponent,
+    HomeComponent,
+    ContactComponent,
+    TruncatePipe,
+    FooterComponent
+  ],
   imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(ROUTES)],
   providers: [WorkService],
   bootstrap: [AppComponent]

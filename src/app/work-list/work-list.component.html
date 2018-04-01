@@ -1,18 +1,24 @@
 <div class="container">
-  <h1 class="display-3 mt-5 mb-5 text-center text-uppercase">Portfolio</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, aut autem voluptatibus molestias in, necessitatibus
-    cumque, excepturi nobis vero est beatae quis incidunt. Dolores cum quis deserunt, excepturi vero eum!</p>
-  <hr>
-  <main role="main" class="row">
+  <h1 class="display-3 mt-5 mb-5 text-center text-primary text-uppercase">Portfolio</h1>
+  <p class="lead">Voici mes derniers porjets. Les projets notés "OCS", sont des projets de la formation OpenclassRooms.</p>
+  <hr class="mt-2">
+  <main role="main" class="row mt-5">
     <div id="cardDeck" class="card-deck">
-      <div class="card bg-white text-dark mb-3" routerLink="/work/{{work.id}}" name="card" *ngFor="let work of workList" style="min-width: 18rem;"
-        (mouseenter)="cardHoverAnimation($event)" (mouseleave)="cardOutAnimation($event)" attr.data-id="{{work.id}}" attr.data-img="{{work.image}}">
+      <div class="card bg-white text-dark mb-4" 
+          routerLink="/work/{{work.id}}" 
+          name="card" *ngFor="let work of workList" 
+          style="min-width: 18rem;"
+          (mouseenter)="cardHoverAnimation($event)" 
+          (mouseleave)="cardOutAnimation($event)" 
+          attr.data-id="{{work.id}}" 
+          attr.data-img="{{work.image}}">
         <div class="card-img-box">
           <img class="card-img-top" src="../../assets/imgs/{{work.image}}" alt="Card image cap">
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{work.title}}</h5>
-          <p class="card-text">{{work.description}}</p>
+          <h2 class="h4 card-title text-info text-uppercase">{{work.title}}</h2>
+          <p class="lead text-secondary">{{work.subtitle}}</p>
+          <p class="card-text">{{work.description | truncate:[140] }}</p>
           <a routerLink="/work/{{work.id}}">Voir le projet</a>
         </div>
         <div class="card-footer">
@@ -24,3 +30,5 @@
     </div>
   </main>
 </div>
+
+<app-footer class="text-center mt-5 d-block w-100"></app-footer>
