@@ -1,3 +1,4 @@
+<div class="div bg-gradient"></div>
 <div class="container">
   <h1 class="h2 mt-5 text-uppercase text-primary">{{work.title}}</h1>
   <p class="lead">{{work.subtitle}}</p>
@@ -5,8 +6,12 @@
     <img class="img-fluid" src="../../assets/imgs/{{work.imageHD}}" alt="Card image cap">
   </div>
   <div class="work mt-4">
+    <div class="d-block d-sm-none">
+      <button class="btn btn-sm btn-secondary" type="button" (click)="prevWork()" [disabled]="prevDesactivated"><i class="fas fa-angle-left"></i> précédent</button>
+      <button class="btn btn-sm btn-secondary" type="button" (click)="nextWork()" [disabled]="nextDesactivated">suivant <i class="fas fa-angle-right"></i></button>
+    </div>
     <hr>
-    <p>{{work.context}}</p>
+    <h3 class="h4 text-danger">{{work.context}}</h3>
     <p>{{work.description}}</p>
     <p class="text-muted">{{work.info}}</p>
     <hr>
@@ -15,13 +20,22 @@
         <h3>Techonologies</h3>
         <ul>
           <li *ngFor="let skill of work.skills">
-            {{skill.name}} - <a href="{{skill.doc}}" target="blank">documentations</a>
+            {{skill.name}} -
+            <a href="{{skill.doc}}" target="blank">documentations</a>
           </li>
         </ul>
       </div>
     </div>
-    <a href="{{work.link}}" class="btn btn-sm btn-danger" target="blank">voir le site</a>
-    <a routerLink="/workList" class="btn btn-sm btn-info push-right">retour</a>
+    <div class="d-flex justify-content-between">
+      <div>
+        <a routerLink="/workList" class="btn btn-sm btn-info push-right">retour</a>
+        <a href="{{work.link}}" class="btn btn-sm btn-danger" target="blank">voir le site</a>
+      </div>
+      <div class="d-none d-sm-block">
+        <button class="btn btn-sm btn-secondary" type="button" (click)="prevWork()" [disabled]="prevDesactivated"><i class="fas fa-angle-left"></i> précedent</button>
+        <button class="btn btn-sm btn-secondary" type="button" (click)="nextWork()" [disabled]="nextDesactivated">suivant <i class="fas fa-angle-right"></i></button>
+      </div>
+    </div>
   </div>
 </div>
 

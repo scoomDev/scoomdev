@@ -13,13 +13,15 @@ import { ContactComponent } from './contact/contact.component';
 import { WorkService } from './services/work-service';
 import { TruncatePipe } from './truncate.pipe';
 import { FooterComponent } from './footer/footer.component';
+import { BrandsFollowComponent } from './brands-follow/brands-follow.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'workList', component: WorkListComponent },
   { path: 'work/:id', component: WorkComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const ROUTES: Routes = [
     HomeComponent,
     ContactComponent,
     TruncatePipe,
-    FooterComponent
+    FooterComponent,
+    BrandsFollowComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(ROUTES)],
   providers: [WorkService],

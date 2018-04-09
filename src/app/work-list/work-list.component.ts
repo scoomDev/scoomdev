@@ -3,11 +3,15 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { Work } from '../interfaces/work';
 import { WorkService } from '../services/work-service';
+import { fadeInAnimation } from '../_animations/fade-in.animations';
 
 @Component({
   selector: 'app-work-list',
   templateUrl: './work-list.component.html',
-  styleUrls: ['./work-list.component.scss']
+  styleUrls: ['./work-list.component.scss'],
+  animations: [fadeInAnimation],
+  // tslint:disable-next-line:use-host-property-decorator
+  host: { '[@fadeInAnimation]': '' }
 })
 export class WorkListComponent implements OnInit {
 

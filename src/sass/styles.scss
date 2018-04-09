@@ -7,12 +7,34 @@ body {
   color: $light;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-sans-serif;
+}
+
+h1 {
+  font-weight: 800 !important;
+  letter-spacing: 3px;
+}
+
 hr {
   background-color: $light;
 }
 
-@media screen and (max-width: 450px) {
-  h1.display-3 {
-    font-size: 3rem;
-  }
+.container, .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+@import '../sass/tools';
+
+.bg-gradient {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    background-image: linear-gradient(180deg, darken($dark, 5%), lighten($dark, 3%), darken($dark, 5%));
+
+    z-index: 0;
 }
